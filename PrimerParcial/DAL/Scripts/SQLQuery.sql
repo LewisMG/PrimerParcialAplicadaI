@@ -1,0 +1,3 @@
+Create DataBase PrimerParcialDb
+Go
+use PrimerParcilDb

@@ -7,13 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PrimerParcial
+namespace PrimerParcial.UI.Consultas
 {
-    public partial class Form1 : Form
+    public partial class Consulta : Form
     {
-        public Form1()
+        public Consulta()
         {
             InitializeComponent();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
