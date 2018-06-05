@@ -26,6 +26,7 @@ namespace PrimerParcial.UI.Registros
             grupo.Cantidad = Convert.ToInt32(CantidadnumericUpDown.Value);
             grupo.GruposDeseados = Convert.ToInt32(GDeseadosnumericUpDown.Value);
             grupo.Fecha = fechaDateTime.Value;
+            grupo.Integrantes = Convert.ToInt32(CantidadnumericUpDown.Value) / Convert.ToInt32(GDeseadosnumericUpDown.Value);
             return grupo;
         }
 
@@ -148,6 +149,11 @@ namespace PrimerParcial.UI.Registros
             else
                 MessageBox.Show("No se pudo eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             LimpiarCampos();
+        }
+
+        private void IntegrantesTextBox_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }
