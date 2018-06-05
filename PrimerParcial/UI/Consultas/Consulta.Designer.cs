@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ConsultaDataGridView = new System.Windows.Forms.DataGridView();
             this.Fechaspanel = new System.Windows.Forms.Panel();
             this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.DesdedateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.CriterioTextBox = new System.Windows.Forms.TextBox();
+            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.FiltroComboBox = new System.Windows.Forms.ComboBox();
-            this.CriterioTextBox = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).BeginInit();
             this.Fechaspanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // ConsultaDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 101);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(600, 285);
-            this.dataGridView1.TabIndex = 0;
+            this.ConsultaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ConsultaDataGridView.Location = new System.Drawing.Point(12, 101);
+            this.ConsultaDataGridView.Name = "ConsultaDataGridView";
+            this.ConsultaDataGridView.Size = new System.Drawing.Size(600, 285);
+            this.ConsultaDataGridView.TabIndex = 0;
             // 
             // Fechaspanel
             // 
@@ -119,6 +119,21 @@
             this.panel1.Size = new System.Drawing.Size(502, 31);
             this.panel1.TabIndex = 24;
             // 
+            // CriterioTextBox
+            // 
+            this.CriterioTextBox.Location = new System.Drawing.Point(211, 4);
+            this.CriterioTextBox.Name = "CriterioTextBox";
+            this.CriterioTextBox.Size = new System.Drawing.Size(286, 20);
+            this.CriterioTextBox.TabIndex = 21;
+            // 
+            // FiltroComboBox
+            // 
+            this.FiltroComboBox.FormattingEnabled = true;
+            this.FiltroComboBox.Location = new System.Drawing.Point(38, 4);
+            this.FiltroComboBox.Name = "FiltroComboBox";
+            this.FiltroComboBox.Size = new System.Drawing.Size(121, 21);
+            this.FiltroComboBox.TabIndex = 20;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -145,21 +160,6 @@
             this.label3.Size = new System.Drawing.Size(133, 13);
             this.label3.TabIndex = 25;
             this.label3.Text = "Filtrar por Rango de Fecha";
-            // 
-            // FiltroComboBox
-            // 
-            this.FiltroComboBox.FormattingEnabled = true;
-            this.FiltroComboBox.Location = new System.Drawing.Point(38, 4);
-            this.FiltroComboBox.Name = "FiltroComboBox";
-            this.FiltroComboBox.Size = new System.Drawing.Size(121, 21);
-            this.FiltroComboBox.TabIndex = 20;
-            // 
-            // CriterioTextBox
-            // 
-            this.CriterioTextBox.Location = new System.Drawing.Point(211, 4);
-            this.CriterioTextBox.Name = "CriterioTextBox";
-            this.CriterioTextBox.Size = new System.Drawing.Size(286, 20);
-            this.CriterioTextBox.TabIndex = 21;
             // 
             // button2
             // 
@@ -195,11 +195,11 @@
             this.Controls.Add(this.Fechaspanel);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.ConsultaDataGridView);
             this.Name = "Consulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultaDataGridView)).EndInit();
             this.Fechaspanel.ResumeLayout(false);
             this.Fechaspanel.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -211,7 +211,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView ConsultaDataGridView;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Panel Fechaspanel;
