@@ -48,12 +48,12 @@ namespace PrimerParcial.UI.Registros
             }
             if (validar == 2 && descripcionTextBox.Text == String.Empty)
             {
-                GeneralerrorProvider.SetError(descripcionTextBox, "Ingrese una Descripcion");
+                GeneralerrorProvider.SetError(descripcionTextBox, "digite una  Descripcion");
                 paso = true;
             }
             if (validar == 2 && CantidadnumericUpDown.Value == 0)
             {
-                GeneralerrorProvider.SetError(CantidadnumericUpDown, "Ingrese Cantidad en Existencia");
+                GeneralerrorProvider.SetError(CantidadnumericUpDown, "Ingrese Cantidad");
                 paso = true;
             }
             if (validar == 2 && GDeseadosnumericUpDown.Value == 0)
@@ -153,7 +153,25 @@ namespace PrimerParcial.UI.Registros
 
         private void IntegrantesTextBox_TextChanged(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void GDeseadosnumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (GDeseadosnumericUpDown.Value != 0)
+                IntegrantesTextBox.Text = (CantidadnumericUpDown.Value / GDeseadosnumericUpDown.Value).ToString();
+        }
+
+        private void CantidadnumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (CantidadnumericUpDown.Value != 0)
+                if (GDeseadosnumericUpDown.Value != 0)
+                    IntegrantesTextBox.Text = (CantidadnumericUpDown.Value / GDeseadosnumericUpDown.Value).ToString();
+        }
+
+        private void Registro_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -130,7 +130,11 @@
             // 
             this.FiltroComboBox.FormattingEnabled = true;
             this.FiltroComboBox.Items.AddRange(new object[] {
-            "Nombre"});
+            "GrupoId",
+            "Descripcion",
+            "Cantidad",
+            "Grupo Deseado",
+            "Integrantes"});
             this.FiltroComboBox.Location = new System.Drawing.Point(38, 4);
             this.FiltroComboBox.Name = "FiltroComboBox";
             this.FiltroComboBox.Size = new System.Drawing.Size(121, 21);

@@ -40,24 +40,24 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
-            this.gruposBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fechaDateTime = new System.Windows.Forms.DateTimePicker();
             this.GrupoIdnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.CantidadnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.GDeseadosnumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.GeneralerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.IntegrantesTextBox = new System.Windows.Forms.TextBox();
+            this.gruposBindingSource = new System.Windows.Forms.BindingSource(this.components);
             grupoIdLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             cantidadLabel = new System.Windows.Forms.Label();
             gruposDeseadosLabel = new System.Windows.Forms.Label();
             integrantesLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.gruposBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GrupoIdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GDeseadosnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GeneralerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gruposBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grupoIdLabel
@@ -179,10 +179,6 @@
             this.descripcionTextBox.Size = new System.Drawing.Size(143, 61);
             this.descripcionTextBox.TabIndex = 8;
             // 
-            // gruposBindingSource
-            // 
-            this.gruposBindingSource.DataSource = typeof(PrimerParcial.Entidades.Grupos);
-            // 
             // fechaDateTime
             // 
             this.fechaDateTime.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.gruposBindingSource, "Fecha", true));
@@ -204,6 +200,7 @@
             this.CantidadnumericUpDown.Name = "CantidadnumericUpDown";
             this.CantidadnumericUpDown.Size = new System.Drawing.Size(100, 20);
             this.CantidadnumericUpDown.TabIndex = 16;
+            this.CantidadnumericUpDown.ValueChanged += new System.EventHandler(this.CantidadnumericUpDown_ValueChanged);
             // 
             // GDeseadosnumericUpDown
             // 
@@ -211,6 +208,7 @@
             this.GDeseadosnumericUpDown.Name = "GDeseadosnumericUpDown";
             this.GDeseadosnumericUpDown.Size = new System.Drawing.Size(100, 20);
             this.GDeseadosnumericUpDown.TabIndex = 17;
+            this.GDeseadosnumericUpDown.ValueChanged += new System.EventHandler(this.GDeseadosnumericUpDown_ValueChanged);
             // 
             // GeneralerrorProvider
             // 
@@ -220,9 +218,14 @@
             // 
             this.IntegrantesTextBox.Location = new System.Drawing.Point(136, 263);
             this.IntegrantesTextBox.Name = "IntegrantesTextBox";
+            this.IntegrantesTextBox.ReadOnly = true;
             this.IntegrantesTextBox.Size = new System.Drawing.Size(100, 20);
             this.IntegrantesTextBox.TabIndex = 18;
             this.IntegrantesTextBox.TextChanged += new System.EventHandler(this.IntegrantesTextBox_TextChanged);
+            // 
+            // gruposBindingSource
+            // 
+            this.gruposBindingSource.DataSource = typeof(PrimerParcial.Entidades.Grupos);
             // 
             // Registro
             // 
@@ -248,11 +251,12 @@
             this.Name = "Registro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
-            ((System.ComponentModel.ISupportInitialize)(this.gruposBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.Registro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GrupoIdnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CantidadnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GDeseadosnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.GeneralerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gruposBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

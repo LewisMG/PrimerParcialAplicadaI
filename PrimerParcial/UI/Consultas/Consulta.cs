@@ -24,10 +24,41 @@ namespace PrimerParcial.UI.Consultas
             
             switch (FiltroComboBox.SelectedIndex)
             {
-                case 0://Nombre en este caso descripcion
-                    filtro = x => x.Descripcion.Equals(CriterioTextBox.Text)
-                    && (x.Fecha >= DesdedateTimePicker.Value && x.Fecha <= HastadateTimePicker.Value);
+                case 0://Id
+                    filtro = t => t.GrupoId.Equals(CriterioTextBox.Text)
+                    && (t.Fecha.Day >= DesdedateTimePicker.Value.Day) && (t.Fecha.Month >= DesdedateTimePicker.Value.Month) 
+                    && (t.Fecha.Year >= DesdedateTimePicker.Value.Year) && (t.Fecha.Day <= HastadateTimePicker.Value.Day)    
+                    && (t.Fecha.Month <= HastadateTimePicker.Value.Month) && (t.Fecha.Year <= HastadateTimePicker.Value.Year);
                     break;
+
+                case 1://descripcion
+                    filtro = t => t.Descripcion.Equals(CriterioTextBox.Text)
+                    && (t.Fecha.Day >= DesdedateTimePicker.Value.Day) && (t.Fecha.Month >= DesdedateTimePicker.Value.Month)
+                    && (t.Fecha.Year >= DesdedateTimePicker.Value.Year) && (t.Fecha.Day <= HastadateTimePicker.Value.Day)
+                    && (t.Fecha.Month <= HastadateTimePicker.Value.Month) && (t.Fecha.Year <= HastadateTimePicker.Value.Year);
+                    break;
+                case 2://Cantidad de estudiantes
+                    filtro = t => t.Cantidad.Equals(CriterioTextBox.Text)
+                    && (t.Fecha.Day >= DesdedateTimePicker.Value.Day) && (t.Fecha.Month >= DesdedateTimePicker.Value.Month)
+                    && (t.Fecha.Year >= DesdedateTimePicker.Value.Year) && (t.Fecha.Day <= HastadateTimePicker.Value.Day)
+                    && (t.Fecha.Month <= HastadateTimePicker.Value.Month) && (t.Fecha.Year <= HastadateTimePicker.Value.Year);
+                    break;
+                case 3://Grupos deseados
+                    filtro = t => t.GruposDeseados.Equals(CriterioTextBox.Text)
+                    && (t.Fecha.Day >= DesdedateTimePicker.Value.Day) && (t.Fecha.Month >= DesdedateTimePicker.Value.Month)
+                    && (t.Fecha.Year >= DesdedateTimePicker.Value.Year) && (t.Fecha.Day <= HastadateTimePicker.Value.Day)
+                    && (t.Fecha.Month <= HastadateTimePicker.Value.Month) && (t.Fecha.Year <= HastadateTimePicker.Value.Year);
+                    break;
+                case 4://Integrantes
+                    filtro = t => t.Integrantes.Equals(CriterioTextBox.Text)
+                    && (t.Fecha.Day >= DesdedateTimePicker.Value.Day) && (t.Fecha.Month >= DesdedateTimePicker.Value.Month)
+                    && (t.Fecha.Year >= DesdedateTimePicker.Value.Year) && (t.Fecha.Day <= HastadateTimePicker.Value.Day)
+                    && (t.Fecha.Month <= HastadateTimePicker.Value.Month) && (t.Fecha.Year <= HastadateTimePicker.Value.Year);
+                    break;
+                case 5://todos
+                    filtro=  x=> true;
+                    break;
+
             }
 
             ConsultaDataGridView.DataSource = BLL.GruposBLL.GetList(filtro);
